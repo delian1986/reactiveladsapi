@@ -1,0 +1,19 @@
+{
+  "name": "json-server-deploy",
+  "version": "1.0.0",
+  "description": "Simple json database",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "json-server,heroku, node, REST API"
+  ],
+  "author": "ReactiveLads",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.16.3",
+    "json-server-auth": "2.0.2",
+    "node": "15.2.1"
+  }
+}
