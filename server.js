@@ -26,5 +26,5 @@ server.use(auth);
 server.use(router);
 
 server.listen(port, "0.0.0.0", function () {
-    console.log("Listening on Port 3000");
+    console.log("Listening on Port 3002");
 });
