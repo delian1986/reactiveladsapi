@@ -28,8 +28,7 @@ server.use(rules)
 server.use(auth);
 
 server.get('/index', (req, res) => {
-   const user = req.query.user;
-   const scansLimit = req.query.vrscans_limit;
+    const {userId, vrscansLimit} = req.query;
 
     const data = {
         'materials': server.db.get('materials'),
@@ -37,12 +36,12 @@ server.get('/index', (req, res) => {
         'tags': server.db.get('tags')
     };
 
-    if (scansLimit) {
-        data.vrscans = server.db.get('vrscans').slice(0, scansLimit);
+    if (vrscansLimit) {
+        data.vrscans = server.db.get('vrscans').slice(0, vrscansLimit);
     }
 
-    if (user) {
-        data.favorites = server.db.get('favorites').filter(fav => fav.userId === parseInt(user));
+    if (userId) {
+        data.favorites = server.db.get('favorites').filter(fav => fav.userId === parseInt(userId));
     }
 
     res.jsonp(data);
