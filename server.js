@@ -8,7 +8,7 @@ const port = process.env.PORT || 3002;
 
 const rules = auth.rewriter({
     // Permission rules
-    // vrscans: 640,
+    vrscans: 640,
     materials: 640,
     colors: 640,
     tags: 640,
@@ -16,7 +16,8 @@ const rules = auth.rewriter({
     industries: 640,
     manufacturers: 640,
 
-    favorites: 660,
+    //TODO:: lines commented for testing purposes
+    // favorites: 660,
     // index:640
 })
 
@@ -27,11 +28,24 @@ server.use(rules)
 server.use(auth);
 
 server.get('/index', (req, res) => {
-    res.jsonp({
-        'materials':server.db.get('materials'),
+   const user = req.query.user;
+   const scansLimit = req.query.vrscans_limit;
+
+    const data = {
+        'materials': server.db.get('materials'),
         'colors': server.db.get('colors'),
         'tags': server.db.get('tags')
-    });
+    };
+
+    if (scansLimit) {
+        data.vrscans = server.db.get('vrscans').slice(0, scansLimit);
+    }
+
+    if (user) {
+        data.favorites = server.db.get('favorites').filter(fav => fav.userId === parseInt(user));
+    }
+
+    res.jsonp(data);
 })
 
 server.use(router);
