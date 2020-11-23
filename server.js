@@ -16,9 +16,8 @@ const rules = auth.rewriter({
     industries: 640,
     manufacturers: 640,
 
-    //TODO:: lines commented for testing purposes
-    // favorites: 660,
-    // index:640
+    favorites: 660,
+    index:640
 })
 
 server.db = router.db;
