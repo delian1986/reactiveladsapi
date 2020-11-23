@@ -27,7 +27,7 @@ server.use(rules)
 server.use(auth);
 
 server.get('/index', (req, res) => {
-    const {userId, vrscansLimit} = req.query;
+    const {email, vrscansLimit} = req.query;
 
     const data = {
         'materials': server.db.get('materials'),
@@ -39,8 +39,12 @@ server.get('/index', (req, res) => {
         data.vrscans = server.db.get('vrscans').slice(0, vrscansLimit);
     }
 
-    if (userId) {
-        data.favorites = server.db.get('favorites').filter(fav => fav.userId === parseInt(userId));
+    if (email) {
+        const user = server.db.get('users').find({ email: email }).value();
+
+        if (user) {
+            data.favorites = server.db.get('favorites').find(fav => fav.userId === user.id);
+        }
     }
 
     res.jsonp(data);
