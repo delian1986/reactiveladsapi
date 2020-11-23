@@ -42,7 +42,7 @@ server.get('/index', (req, res) => {
         const user = server.db.get('users').find({ email: email }).value();
 
         if (user) {
-            data.favorites = server.db.get('favorites').find(fav => fav.userId === user.id);
+            data.favorites = server.db.get('favorites').filter(fav => fav.userId === user.id);
         }
     }
 
