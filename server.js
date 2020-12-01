@@ -2,22 +2,22 @@ const path = require('path');
 const jsonServer = require('json-server');
 const auth = require('json-server-auth');
 const server = jsonServer.create();
-const router = jsonServer.router(path.join(__dirname,'db.json'));
+const router = jsonServer.router(path.join(__dirname, 'db.json'));
 const middlewares = jsonServer.defaults();
 const port = process.env.PORT || 3002;
 
 const rules = auth.rewriter({
     // Permission rules
-    vrscans: 640,
-    materials: 640,
-    colors: 640,
-    tags: 640,
+    vrscans: 664,
+    materials: 664,
+    colors: 664,
+    tags: 664,
 
-    industries: 640,
-    manufacturers: 640,
+    industries: 664,
+    manufacturers: 664,
 
-    favorites: 660,
-    index:640
+    favorites: 664,
+    index: 664
 })
 
 server.db = router.db;
@@ -27,7 +27,7 @@ server.use(rules)
 server.use(auth);
 
 server.get('/index', (req, res) => {
-    const {userId, vrscansLimit} = req.query;
+    const { userId, vrscansLimit } = req.query;
 
     const data = {
         'materials': server.db.get('materials'),
