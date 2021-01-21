@@ -44,7 +44,6 @@ server.get('/index', (req, res) => {
 
         if (user) {
             data.favorites = server.db.get('favorites').filter(fav => fav.userId === user.id);
-            delete user.password;
             data.user = user;
         }
     }
