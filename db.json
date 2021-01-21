@@ -21272,16 +21272,6 @@
       "vrscanId": 2,
       "userId": 1,
       "id": 2
-    },
-    {
-      "vrscanId": 34,
-      "userId": 2,
-      "id": 3
-    },
-    {
-      "vrscanId": 34,
-      "userId": 3,
-      "id": 4
     }
   ],
   "users": [
@@ -21292,19 +21282,6 @@
       "lastName": "Example",
       "photoUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
       "id": 1
-    },
-    {
-      "email": "radko@radko.radko",
-      "password": "$2a$10$8qfXaTKRuNvJGvpMFkFAf.VbDq9lQqJWjZKCYDbucO138edRROPbi",
-      "id": 2
-    },
-    {
-      "email": "delyan@123.bg",
-      "password": "$2a$10$o0C9zpEuWj3D6izeEv5f4eCtHneTQVlatL2HTKTNrx6THXSBU/qma",
-      "firstName": "Delyan",
-      "lastName": "Delyan",
-      "photoUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
-      "id": 3
     }
   ]
 }
