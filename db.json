@@ -21274,7 +21274,7 @@
       "id": 2
     }
   ],
-  "saveSearch": [],
+  "savePresets": [],
   "users": [
     {
       "email": "clara@example.com",
@@ -21283,6 +21283,11 @@
       "lastName": "Example",
       "photoUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
       "id": 1
+    },
+    {
+      "email": "delian1914@abv.bg",
+      "password": "$2a$10$is8zBVBSywQx8KJan.3ecuiNTr/uu4aK319gMLA7N0JzoB8Io0vru",
+      "id": 2
     }
   ]
 }
