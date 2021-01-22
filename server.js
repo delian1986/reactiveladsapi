@@ -45,6 +45,7 @@ server.get('/index', (req, res) => {
 
         if (user) {
             data.favorites = server.db.get('favorites').filter(fav => fav.userId === user.id);
+            data.saveSearch = server.db.get('saveSearch').filter(fav => fav.userId === user.id);
             data.user = user;
         }
     }
