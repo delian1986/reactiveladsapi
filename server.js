@@ -17,6 +17,7 @@ const rules = auth.rewriter({
     manufacturers: 640,
 
     favorites: 660,
+    saveSearch: 660,
     index:640
 })
 
